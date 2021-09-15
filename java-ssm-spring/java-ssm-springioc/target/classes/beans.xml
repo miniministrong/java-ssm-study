@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+        告诉spring创建对象
+        声明bean，就是告诉spring要创建某个类
+        id：对象的自定义名称，唯一值。spring通过id找到这个对象
+        class：类的全限定名称（不能是接口，因为spring是反射机制来创建对象的，必须使用类）
+        完成的功能：
+            HelloService helloService = new HelloServiceImpl();
+            spring将创建好的对象放入到map集合中，springMap.put(id的值, 要创建的对象);
+            例如：springMap.put("helloService", new HelloServiceImpl());
+        一个bean标签声明一个对象
+    -->
+    <bean id="helloService" class="study.ssm.springioc.service.impl.HelloServiceImpl" />
+    <bean id="myDate" class="java.util.Date"/>
+</beans>

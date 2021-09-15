@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="mySchool" class="study.ssm.springioc.ba03.School">
+        <constructor-arg name="name" value="二中"/>
+        <constructor-arg name="address" value="北京"/>
+    </bean>
+
+    <bean id="myStudent" class="study.ssm.springioc.ba03.Student">
+        <constructor-arg name="name" value="张三"/>
+        <constructor-arg name="age" value="20"/>
+        <constructor-arg name="school" ref="mySchool"/>
+    </bean>
+
+    <!--使用index属性-->
+    <bean id="student" class="study.ssm.springioc.ba03.Student">
+        <constructor-arg index="0" value="李四"/>
+        <constructor-arg index="1" value="23"/>
+        <constructor-arg index="2" ref="mySchool"/>
+    </bean>
+
+    <!--省略index，但是必须顺序赋值-->
+    <bean id="stu" class="study.ssm.springioc.ba03.Student">
+        <constructor-arg value="王五"/>
+        <constructor-arg value="23"/>
+        <constructor-arg ref="mySchool"/>
+    </bean>
+
+    <!--使用构造注入，创建FIle文件-->
+    <bean id="myFile" class="java.io.File">
+        <constructor-arg name="parent" value="D:\Study\04-SSM\资料\spring-ioc"/>
+        <constructor-arg name="child" value="spring-IOC.pdf"/>
+    </bean>
+</beans>

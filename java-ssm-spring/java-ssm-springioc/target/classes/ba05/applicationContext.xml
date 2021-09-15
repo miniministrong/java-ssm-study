@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="myStudent" class="study.ssm.springioc.ba05.Student" autowire="byType">
+        <property name="name" value="李四"/>
+        <property name="age" value="20"/>
+        <!--<property name="school" ref="mySchool"/>-->
+    </bean>
+    <!--正常的同源关系-->
+    <!--<bean id="mySchool" class="study.ssm.springioc.ba05.School">
+        <property name="name" value="一中"/>
+        <property name="address" value="天津"/>
+    </bean>-->
+
+    <!--父子类关系-->
+    <bean id="mySchool" class="study.ssm.springioc.ba05.PrimarySchool">
+        <property name="name" value="一小"/>
+        <property name="address" value="北京"/>
+    </bean>
+</beans>

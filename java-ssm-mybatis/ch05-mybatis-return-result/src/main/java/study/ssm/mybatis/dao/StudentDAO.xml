@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="study.ssm.mybatis.dao.StudentDAO">
+    <!-- 单个参数 -->
+    <select id="getStudentById" resultType="study.ssm.mybatis.model.Student">
+        select id, name, email, age from student where id = #{id}
+    </select>
+
+    <!-- 多个简单类型参数 -->
+    <select id="listMultiStudents" resultType="study.ssm.mybatis.model.Student">
+        select id, name, email, age from student where name = #{name} or age = #{age}
+    </select>
+    <!-- 统计学生总数 -->
+    <select id="countStudents" resultType="int">
+        select count(*) from student
+    </select>
+    <!-- 根据id查询数据，并返回ViewStudent对象 -->
+    <select id="getStudentReturnViewStudent" resultType="ViewStudent">
+        select id, name, email, age from student where id = #{sid}
+    </select>
+
+    <!-- 返回map -->
+    <select id="getStudentMap" resultType="java.util.HashMap">
+        select id, name, email from student where id = #{sid}
+    </select>
+
+    <!--
+        定义resultMap:
+            id : 自定义名称，表示你定义的这个resultMap叫什么名字
+            type : java类型的全限定名称
+    -->
+    <resultMap id="studentMap" type="study.ssm.mybatis.model.Student">
+        <!-- 列名和属性之间的关系 -->
+        <!--
+            主键列，使用id标签
+            column : 列名
+            property : java类型的属性名
+         -->
+        <id column="id" property="id"/>
+        <!-- 非主键列，使用result -->
+        <result column="name" property="name"/>
+        <result column="email" property="email"/>
+        <result column="age" property="age"/>
+    </resultMap>
+    <select id="listStudentsResultMap" resultMap="studentMap">
+        select id, name, email, age from student
+    </select>
+
+    <!-- 列名和属性名不一样：第一种方式 -->
+    <resultMap id="myStudentMap" type="study.ssm.mybatis.model.MyStudent">
+        <id column="id" property="stuId"/>
+        <result column="name" property="stuName"/>
+        <result column="email" property="stuEmail"/>
+        <result column="age" property="stuAge"/>
+    </resultMap>
+    <select id="listMyStudent" resultMap="myStudentMap">
+        select id, name, email, age from student
+    </select>
+
+    <!-- 列名和属性名不一样：第二种方式 -->
+    <select id="listMyStudentUseAs" resultType="MyStudent">
+        select id as stuId, name as stuName, email as stuEmail, age as stuAge from student
+    </select>
+
+    <!-- like第一种：在java对象中指定like的内容 -->
+    <select id="listStudentsLikeJava" resultType="Student">
+        select id, name, email, age from student where name like #{likeName}
+    </select>
+
+    <!-- like第二种：在mapper文件中进行拼接 -->
+    <select id="listStudentsLikeJoin" resultType="Student">
+        select id, name, email, age from student where name like "%" #{name} "%"
+    </select>
+</mapper>

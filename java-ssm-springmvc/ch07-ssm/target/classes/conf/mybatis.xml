@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 实体类的别名，采用的是根据实体类的包名去更改实体类的包名 -->
+    <typeAliases>
+        <package name="study.ssm.model"/>
+    </typeAliases>
+
+    <!--sql mapper(sql映射文件的位置)，mapper文件所在的包名，一般也是dao接口所在的包名-->
+    <mappers>
+        <package name="study.ssm.dao"/>
+    </mappers>
+</configuration>

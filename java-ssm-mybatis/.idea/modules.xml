@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ch01-hello-mybatis/ch01-hello-mybatis.iml" filepath="$PROJECT_DIR$/ch01-hello-mybatis/ch01-hello-mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch02-mybatis-dao/ch02-mybatis-dao.iml" filepath="$PROJECT_DIR$/ch02-mybatis-dao/ch02-mybatis-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch03-mybatis-proxy-dao/ch03-mybatis-proxy-dao.iml" filepath="$PROJECT_DIR$/ch03-mybatis-proxy-dao/ch03-mybatis-proxy-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch04-mybatis-param/ch04-mybatis-param.iml" filepath="$PROJECT_DIR$/ch04-mybatis-param/ch04-mybatis-param.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch05-mybatis-return-result/ch05-mybatis-return-result.iml" filepath="$PROJECT_DIR$/ch05-mybatis-return-result/ch05-mybatis-return-result.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch06-mybatis-dynamic-sql/ch06-mybatis-dynamic-sql.iml" filepath="$PROJECT_DIR$/ch06-mybatis-dynamic-sql/ch06-mybatis-dynamic-sql.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--声明student对象
+        di:给属性赋值
+    -->
+    <bean id="myStudent" class="study.ssm.springioc.ba01.Student">
+        <property name="name" value="李四"/>
+        <property name="age" value="20"/>
+        <property name="email" value="lisi@qq.com"/>
+    </bean>
+
+    <bean id="myDate" class="java.util.Date">
+        <property name="time" value="906681268851"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ch01-springmvc-hello/ch01-springmvc-hello.iml" filepath="$PROJECT_DIR$/ch01-springmvc-hello/ch01-springmvc-hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch02-springmvc-requestmapping/ch02-springmvc-requestmapping.iml" filepath="$PROJECT_DIR$/ch02-springmvc-requestmapping/ch02-springmvc-requestmapping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch03-springmvc-receiveparam/ch03-springmvc-receiveparam.iml" filepath="$PROJECT_DIR$/ch03-springmvc-receiveparam/ch03-springmvc-receiveparam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch04-springmvc-return/ch04-springmvc-return.iml" filepath="$PROJECT_DIR$/ch04-springmvc-return/ch04-springmvc-return.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch05-springmvc-url-pattern/ch05-springmvc-url-pattern.iml" filepath="$PROJECT_DIR$/ch05-springmvc-url-pattern/ch05-springmvc-url-pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch06-springmvc-path/ch06-springmvc-path.iml" filepath="$PROJECT_DIR$/ch06-springmvc-path/ch06-springmvc-path.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch07-ssm/ch07-ssm.iml" filepath="$PROJECT_DIR$/ch07-ssm/ch07-ssm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch08-springmvc-forward-redirect/ch08-springmvc-forward-redirect.iml" filepath="$PROJECT_DIR$/ch08-springmvc-forward-redirect/ch08-springmvc-forward-redirect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ch09-springmvc-exception/ch09-springmvc-exception.iml" filepath="$PROJECT_DIR$/ch09-springmvc-exception/ch09-springmvc-exception.iml" />
+    </modules>
+  </component>
+</project>

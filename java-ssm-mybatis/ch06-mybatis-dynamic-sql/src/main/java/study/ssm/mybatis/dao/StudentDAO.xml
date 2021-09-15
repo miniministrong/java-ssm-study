@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="study.ssm.mybatis.dao.StudentDAO">
+
+    <!-- 定义代码片段 -->
+    <sql id="selectStu">
+        select id, name, email, age from student
+    </sql>
+    <select id="listStudentsUseIf" resultType="Student">
+        <include refid="selectStu"/>
+        where 1 = 1
+        <if test="name != null and name != ''">
+            and name = #{name}
+        </if>
+        <if test="age > 0">
+            or age &gt; #{age}
+        </if>
+    </select>
+
+    <select id="listStudentsUseWhere" resultType="student">
+        select id, name, email, age from student
+        <where>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="age > 0">
+                or age &gt; #{age}
+            </if>
+        </where>
+    </select>
+    
+    
+    <!-- 遍历简单类型的list集合 -->
+    <select id="listStudentsForSim" resultType="study.ssm.mybatis.model.Student">
+        select id, name, email, age from student where id in
+        <foreach collection="list" item="myId" open="(" close=")" separator=",">
+            #{myId}
+        </foreach>
+    </select>
+
+    <!-- 遍历含有对象的list集合 -->
+    <select id="listStudentForStudent" resultType="study.ssm.mybatis.model.Student">
+        select id, name, email, age from student where id in
+        <foreach collection="list" item="stu" open="(" close=")" separator=",">
+            #{stu.id}
+        </foreach>
+        or name in
+        <foreach collection="list" item="stu" open="(" close=")" separator=",">
+            #{stu.name}
+        </foreach>
+    </select>
+
+    <select id="listStudentsUsePageHelper" resultType="study.ssm.mybatis.model.Student">
+        select * from student order by id
+    </select>
+</mapper>
